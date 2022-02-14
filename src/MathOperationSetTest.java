@@ -1,6 +1,8 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.HashSet;
+import java.util.Set;
 
 public class MathOperationSetTest {
 
@@ -18,16 +20,25 @@ public class MathOperationSetTest {
 
     @Test
     public void union() {
-        System.out.println(hashSet1);
-        System.out.println(hashSet2);
-        System.out.println(MathOperationSet.union(hashSet1, hashSet2));
-        System.out.println(MathOperationSet.intersection(hashSet1, hashSet2));
-        System.out.println(MathOperationSet.minus(hashSet1, hashSet2));
-        System.out.println(MathOperationSet.difference(hashSet1, hashSet2));
-
+        HashSet<Integer> expected = new HashSet<>(Set.of(1, 2, 3));
+        Assert.assertEquals(expected, MathOperationSet.union(hashSet1,hashSet2));
     }
 
     @Test
     public void intersection() {
+        HashSet<Integer> expected = new HashSet<>(Set.of(2));
+        Assert.assertEquals(expected, MathOperationSet.intersection(hashSet1,hashSet2));
+    }
+
+    @Test
+    public void minus() {
+        HashSet<Integer> expected = new HashSet<>(Set.of(1));
+        Assert.assertEquals(expected, MathOperationSet.minus(hashSet1,hashSet2));
+    }
+
+    @Test
+    public void difference() {
+        HashSet<Integer> expected = new HashSet<>(Set.of(1, 3));
+        Assert.assertEquals(expected, MathOperationSet.difference(hashSet1,hashSet2));
     }
 }
