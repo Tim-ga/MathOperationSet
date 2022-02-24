@@ -1,22 +1,12 @@
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import java.util.HashSet;
 import java.util.Set;
 
 public class MathOperationSetTest {
 
-    HashSet<Integer> hashSet1 = new HashSet<>();
-    HashSet<Integer> hashSet2 = new HashSet<>();
-
-    @Before
-    public void initialization() {
-        hashSet1.add(1);
-        hashSet1.add(2);
-
-        hashSet2.add(2);
-        hashSet2.add(3);
-    }
+    HashSet<Integer> hashSet1 = new HashSet<>(Set.of(1, 2));
+    HashSet<Integer> hashSet2 = new HashSet<>(Set.of(2, 3));
 
     @Test
     public void union() {
